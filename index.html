@@ -1,20 +1,218 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <title>AfriConnect Summit 2026 - Accueil</title>
 </head>
 
 <body>
-   
+    <!--  HEADER / NAVIGATION -->
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <span>AfriConnect</span>
+                <span>Summit 2026</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html" class="active">Accueil</a></li>
+                <li><a href="programme.html">Programme</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" aria-label="Basculer le thème sombre/clair">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+                <button class="hamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+                    id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!--  SECTION HERO  -->
+        <section class="hero" id="hero">
+            <div class="hero-content">
+                <p class="hero-badge">Édition 2026</p>
+                <h1>L'innovation <br />africaine <span>en mouvement</span></h1>
+                <p class="hero-subtitle">
+                    <i class="bi bi-geo-alt" aria-hidden="true"></i> Dakar, Sénégal &bull;
+                    <i class="bi bi-calendar-event" aria-hidden="true"></i> 15-17 Décembre 2026
+                </p>
+                <div class="hero-buttons">
+                    <a href="contact.html" class="btn-primary">Je m'inscris</a>
+                    <a href="programme.html" class="btn-secondary">Voir le programme</a>
+                </div>
+                <!-- Compte à rebours -->
+                <div class="countdown" id="countdown" aria-label="Compte à rebours avant l'événement">
+                    <div><span id="days">00</span><span>Jours</span></div>
+                    <div><span id="hours">00</span><span>Heures</span></div>
+                    <div><span id="minutes">00</span><span>Minutes</span></div>
+                    <div><span id="seconds">00</span><span>Secondes</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!--  SECTION CHIFFRES CLÉS  -->
+        <section class="stats" id="stats">
+            <h2>AfriConnect en chiffres</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="1200">0</span>
+                    <span class="stat-label">Participants</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="48">0</span>
+                    <span class="stat-label">Intervenants</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-label">Jours</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="12">0</span>
+                    <span class="stat-label">Pays</span>
+                </div>
+            </div>
+        </section>
+
+        <!--  SECTION POURQUOI PARTICIPER  -->
+        <section class="why-attend" id="why-attend">
+            <h2>Pourquoi participer ?</h2>
+            <div class="why-grid">
+                <article class="why-card">
+                    <i class="bi bi-people-fill" aria-hidden="true"></i>
+                    <h3>Networking d'exception</h3>
+                    <p>Rencontrez les acteurs clés de la tech africaine dans une ambiance conviviale.</p>
+                </article>
+                <article class="why-card">
+                    <i class="bi bi-lightbulb-fill" aria-hidden="true"></i>
+                    <h3>Innovation de pointe</h3>
+                    <p>Découvrez les dernières tendances et technologies qui façonnent l'avenir.</p>
+                </article>
+                <article class="why-card">
+                    <i class="bi bi-graph-up-arrow" aria-hidden="true"></i>
+                    <h3>Opportunités d'affaires</h3>
+                    <p>Connectez-vous avec des investisseurs et développez votre réseau professionnel.</p>
+                </article>
+            </div>
+        </section>
+
+        <!--  SECTION INTERVENANTS VEDETTES  -->
+        <section class="featured-speakers" id="featured-speakers">
+            <h2>Intervenants vedettes</h2>
+            <div class="speakers-grid">
+                <article class="speaker-card">
+                    <img src="images/femme1.jpg" alt="Portrait d'Amina Diallo" width="100">
+                    <h3>Amina Diallo</h3>
+                    <p>CEO, Tech4Africa</p>
+                    <span class="speaker-country">Sénégal</span>
+                </article>
+                <article class="speaker-card">
+                    <img src="images/homme4.jpg" alt="Portrait de Kofi Mensah" width="100">
+                    <h3>Kofi Mensah</h3>
+                    <p>CTO, Innovate Ghana</p>
+                    <span class="speaker-country">Ghana</span>
+                </article>
+                <article class="speaker-card">
+                    <img src="images/fmm1.jpg" alt="Portrait de Fatima Zahra" width="100">
+                    <h3>Fatima Zahra</h3>
+                    <p>Data Scientist, AI Hub</p>
+                    <span class="speaker-country">Maroc</span>
+                </article>
+                <article class="speaker-card">
+                    <img src="images/hmm2.jpg" alt="Portrait de Jean-Baptiste Niyonzima" width="100">
+                    <h3>Jean-Baptiste Niyonzima</h3>
+                    <p>Lead Developer, Kigali Tech</p>
+                    <span class="speaker-country">Rwanda</span>
+                </article>
+            </div>
+            <div class="speakers-cta">
+                <a href="intervenants.html" class="btn-secondary">Voir tous les intervenants</a>
+            </div>
+        </section>
+
+        <!--  SECTION SPONSORS  -->
+        <section class="sponsors" id="sponsors">
+            <h2>Nos sponsors</h2>
+            <div class="sponsors-grid">
+                <div class="sponsor-level gold">
+                    <span>OR</span>
+                    <div class="sponsor-logos">
+                        <img src="images/slblogo.avif" alt="Logo sponsor Gold 1" width="100">
+                        <img src="images/totallogo.jpg" alt="Logo sponsor Gold 2" width="100">
+                    </div>
+                </div>
+                <div class="sponsor-level silver">
+                    <span>ARGENT</span>
+                    <div class="sponsor-logos">
+                        <img src="images/orangelogo.webp" alt="Logo sponsor Silver 1" width="100">
+                        <img src="images/yaslogo.avif" alt="Logo sponsor Silver 2" width="100">
+                        <img src="images/applelogo.webp" alt="Logo sponsor Silver 3" width="100">
+                    </div>
+                </div>
+                <div class="sponsor-level bronze">
+                    <span>BRONZE</span>
+                    <div class="sponsor-logos">
+                        <img src="images/wavelogo.avif" alt="Logo sponsor Bronze 1" width="100">
+                        <img src="images/readywelllogo.png" alt="Logo sponsor Bronze 2" width="100">
+                        <img src="images/yangologo.webp" alt="Logo sponsor Bronze 3" width="100">
+                        <img src="images/enilogo.jfif" alt="Logo sponsor Bronze 4" width="100">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--  FOOTER  -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>AfriConnect Summit</h4>
+                <p>Le rendez-vous incontournable de la tech africaine.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="bi bi-geo-alt" aria-hidden="true"></i> Dakar, Sénégal</p>
+                <p><i class="bi bi-envelope" aria-hidden="true"></i> contact@africonnect.com</p>
+                <p><i class="bi bi-telephone" aria-hidden="true"></i> +221 33 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
+            <button id="backToTop" aria-label="Retour en haut de page">
+                <i class="bi bi-chevron-up"></i>
+            </button>
+        </div>
+    </footer>
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="js/main.js"></script>
 </body>
 

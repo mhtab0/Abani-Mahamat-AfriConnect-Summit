@@ -407,11 +407,176 @@ footer {
 }
 #backToTop:hover { transform: translateY(-4px); }
 
-/* RESPONSIVE DE BASE (navbar, hero, footer uniquement à ce stade) */
+/* COMMIT 6 - SECTION CHIFFRES CLÉS (CSS Grid usage #1) */
+.stats { text-align: center; }
+ 
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+ 
+.stat-card {
+    background-color: var(--color-card-bg);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-hover);
+}
+ 
+/* Le nombre affiché ("0" dans le HTML) sera incrémenté en JS au commit 9 */
+.stat-number {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--color-ocean);
+}
+ 
+.stat-label {
+    color: var(--color-text-soft);
+    font-size: 0.9rem;
+}
+ 
+/* Préparation des animations au scroll (IntersectionObserver au commit 9) */
+[data-animate] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-animate].in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+ 
+/* COMMIT 6 - SECTION POURQUOI PARTICIPER (Flexbox usage #3) */
+.why-grid {
+    display: flex;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+ 
+.why-card {
+    flex: 1 1 280px;
+    background-color: var(--color-card-bg);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-soft);
+    transition: transform var(--transition-fast);
+}
+.why-card:hover { transform: translateY(-6px); }
+ 
+.why-card i {
+    font-size: 2rem;
+    color: var(--color-sunset);
+    margin-bottom: var(--space-sm);
+    display: block;
+}
+ 
+/* COMMIT 6 - INTERVENANTS VEDETTES (CSS Grid usage #2) */
+.speakers-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md);
+}
+ 
+.speaker-card {
+    background-color: var(--color-card-bg);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    text-align: center;
+    padding-bottom: var(--space-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+ 
+.speaker-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+}
+ 
+.speaker-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    margin-bottom: var(--space-sm);
+}
+ 
+.speaker-card h3 { padding: 0 var(--space-sm); }
+ 
+.speaker-card p {
+    padding: 0 var(--space-sm);
+    font-size: 0.9rem;
+}
+ 
+.speaker-country {
+    display: inline-block;
+    margin-top: var(--space-xs);
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-bg-alt);
+    border-radius: var(--radius-full);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--color-ocean);
+}
+ 
+.speakers-cta {
+    text-align: center;
+    margin-top: var(--space-lg);
+}
+ 
+/* COMMIT 6 - SECTION SPONSORS */
+.sponsors { text-align: center; }
+ 
+.sponsors-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+    margin-top: var(--space-md);
+}
+ 
+.sponsor-level > span {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.1em;
+}
+ 
+.sponsor-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+}
+ 
+/* Différenciation visuelle des 3 niveaux par la taille, comme demandé dans l'énoncé */
+.sponsor-logos img {
+    filter: grayscale(1);
+    opacity: 0.7;
+    transition: filter var(--transition-fast), opacity var(--transition-fast), transform var(--transition-fast);
+}
+.sponsor-logos img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.05);
+}
+ 
+.gold .sponsor-logos img { height: 70px; width: auto; }
+.silver .sponsor-logos img { height: 50px; width: auto; }
+.bronze .sponsor-logos img { height: 36px; width: auto; }
+ 
+/* RESPONSIVE (navbar, hero, footer, stats, why-attend, speakers, sponsors) */
 @media (max-width: 768px) {
     .nav-links { display: none; }
     .hamburger { display: flex; }
-
+ 
     .nav-links.open {
         display: flex;
         flex-direction: column;
@@ -423,14 +588,20 @@ footer {
         gap: var(--space-sm);
         box-shadow: var(--shadow-soft);
     }
-
+ 
     .footer-grid { grid-template-columns: 1fr; gap: var(--space-md); }
     .footer-bottom { flex-direction: column; gap: var(--space-sm); text-align: center; }
+ 
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .speakers-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
+ 
 @media (max-width: 375px) {
     .countdown { gap: var(--space-sm); }
     .countdown > div { min-width: 65px; padding: var(--space-xs); }
     .hero-buttons { flex-direction: column; width: 100%; }
     .btn-primary, .btn-secondary { text-align: center; width: 100%; }
+ 
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm); }
+    .speakers-grid { grid-template-columns: 1fr; }
 }

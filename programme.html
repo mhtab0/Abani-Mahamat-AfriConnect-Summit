@@ -1,19 +1,269 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <title>AfriConnect Summit 2026 - Programme</title>
 </head>
 
 <body>
-    
+    <!--  HEADER / NAVIGATION  -->
+    <header>
+        <nav>
+            <div class="nav-brand">
+                <span>AfriConnect</span>
+                <span>Summit 2026</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="programme.html" class="active">Programme</a></li>
+                <li><a href="intervenants.html">Intervenants</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button id="themeToggle" aria-label="Basculer le thème sombre/clair">
+                    <i class="bi bi-moon-fill"></i>
+                </button>
+                <button class="hamburger" aria-label="Ouvrir le menu de navigation" aria-expanded="false"
+                    id="hamburger">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!--  HERO INTERNE  -->
+        <section class="page-hero">
+            <h1>Programme</h1>
+            <nav aria-label="Fil d'Ariane" class="breadcrumb">
+                <a href="index.html">Accueil</a> <span aria-hidden="true">&gt;</span> <span>Programme</span>
+            </nav>
+        </section>
+
+        <!--  ONGLETS 3 JOURS  -->
+        <section class="schedule" id="schedule">
+            <div class="tabs" role="tablist" aria-label="Jours de la conférence">
+                <button class="tab-btn active" data-day="1" role="tab" aria-selected="true">Jour 1</button>
+                <button class="tab-btn" data-day="2" role="tab" aria-selected="false">Jour 2</button>
+                <button class="tab-btn" data-day="3" role="tab" aria-selected="false">Jour 3</button>
+            </div>
+
+            <!-- Planning Jour 1 -->
+            <div class="tab-panel active" id="day-1" role="tabpanel">
+                <table>
+                    <caption class="sr-only">Planning du jour 1</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Heure</th>
+                            <th scope="col">Session</th>
+                            <th scope="col">Intervenant</th>
+                            <th scope="col">Salle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09h00</td>
+                            <td>Cérémonie d'ouverture</td>
+                            <td>Amina Diallo</td>
+                            <td>Salle Baobab</td>
+                        </tr>
+                        <tr>
+                            <td>10h00</td>
+                            <td>L'IA au service de l'Afrique</td>
+                            <td>Fatima Zahra</td>
+                            <td>Salle Baobab</td>
+                        </tr>
+                        <tr>
+                            <td>11h30</td>
+                            <td>Financer sa startup tech</td>
+                            <td>Kofi Mensah</td>
+                            <td>Salle Kilimandjaro</td>
+                        </tr>
+                        <tr>
+                            <td>14h00</td>
+                            <td>Design systems à grande échelle</td>
+                            <td>Jean-Baptiste Niyonzima</td>
+                            <td>Salle Sahara</td>
+                        </tr>
+                        <tr>
+                            <td>16h00</td>
+                            <td>Networking &amp; cocktail</td>
+                            <td>Tous les intervenants</td>
+                            <td>Terrasse</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Planning Jour 2 -->
+            <div class="tab-panel" id="day-2" role="tabpanel" hidden>
+                <table>
+                    <caption class="sr-only">Planning du jour 2</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Heure</th>
+                            <th scope="col">Session</th>
+                            <th scope="col">Intervenant</th>
+                            <th scope="col">Salle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09h00</td>
+                            <td>Data science appliquée</td>
+                            <td>Fatima Zahra</td>
+                            <td>Salle Baobab</td>
+                        </tr>
+                        <tr>
+                            <td>10h30</td>
+                            <td>Scaler une entreprise tech en Afrique</td>
+                            <td>Amina Diallo</td>
+                            <td>Salle Kilimandjaro</td>
+                        </tr>
+                        <tr>
+                            <td>12h00</td>
+                            <td>Panel investisseurs</td>
+                            <td>Kofi Mensah</td>
+                            <td>Salle Baobab</td>
+                        </tr>
+                        <tr>
+                            <td>14h30</td>
+                            <td>UX pour marchés émergents</td>
+                            <td>Jean-Baptiste Niyonzima</td>
+                            <td>Salle Sahara</td>
+                        </tr>
+                        <tr>
+                            <td>17h00</td>
+                            <td>Ateliers pratiques</td>
+                            <td>Tous les intervenants</td>
+                            <td>Salles B</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Planning Jour 3 -->
+            <div class="tab-panel" id="day-3" role="tabpanel" hidden>
+                <table>
+                    <caption class="sr-only">Planning du jour 3</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Heure</th>
+                            <th scope="col">Session</th>
+                            <th scope="col">Intervenant</th>
+                            <th scope="col">Salle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>09h00</td>
+                            <td>Cybersécurité en Afrique</td>
+                            <td>Kofi Mensah</td>
+                            <td>Salle Baobab</td>
+                        </tr>
+                        <tr>
+                            <td>10h30</td>
+                            <td>IA générative et création</td>
+                            <td>Fatima Zahra</td>
+                            <td>Salle Sahara</td>
+                        </tr>
+                        <tr>
+                            <td>12h00</td>
+                            <td>Pitch startups</td>
+                            <td>Amina Diallo</td>
+                            <td>Salle Kilimandjaro</td>
+                        </tr>
+                        <tr>
+                            <td>14h00</td>
+                            <td>Table ronde : l'avenir de la tech africaine</td>
+                            <td>Tous les intervenants</td>
+                            <td>Salle Baobab</td>
+                        </tr>
+                        <tr>
+                            <td>16h00</td>
+                            <td>Cérémonie de clôture</td>
+                            <td>Amina Diallo</td>
+                            <td>Salle Baobab</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!--  SECTION THÉMATIQUES  -->
+        <section class="themes" id="themes">
+            <h2>Nos thématiques</h2>
+            <div class="themes-grid">
+                <article class="theme-card">
+                    <i class="bi bi-cpu" aria-hidden="true"></i>
+                    <h3>IA &amp; Tech</h3>
+                    <p>Intelligence artificielle, cloud et innovations technologiques.</p>
+                </article>
+                <article class="theme-card">
+                    <i class="bi bi-briefcase" aria-hidden="true"></i>
+                    <h3>Business</h3>
+                    <p>Entrepreneuriat, financement et croissance des startups.</p>
+                </article>
+                <article class="theme-card">
+                    <i class="bi bi-palette" aria-hidden="true"></i>
+                    <h3>Design</h3>
+                    <p>UX/UI, design systems et créativité numérique.</p>
+                </article>
+                <article class="theme-card">
+                    <i class="bi bi-bar-chart" aria-hidden="true"></i>
+                    <h3>Data</h3>
+                    <p>Data science, analyse et prise de décision par la donnée.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <!--  FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>AfriConnect Summit</h4>
+                <p>Le rendez-vous incontournable de la tech africaine.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Twitter"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="programme.html">Programme</a></li>
+                    <li><a href="intervenants.html">Intervenants</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="bi bi-geo-alt" aria-hidden="true"></i> Dakar, Sénégal</p>
+                <p><i class="bi bi-envelope" aria-hidden="true"></i> contact@africonnect.com</p>
+                <p><i class="bi bi-telephone" aria-hidden="true"></i> +221 33 123 4567</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> AfriConnect Summit. Tous droits réservés.</p>
+            <button id="backToTop" aria-label="Retour en haut de page">
+                <i class="bi bi-chevron-up"></i>
+            </button>
+        </div>
+    </footer>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <script src="js/main.js"></script>
 </body>
 

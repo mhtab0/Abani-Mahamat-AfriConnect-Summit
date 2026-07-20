@@ -1,0 +1,164 @@
+
+/* VARIABLES CSS (design system)  */
+:root {
+    /* Couleurs - mode clair (par défaut) */
+    --color-bg: #FBF9F6;
+    --color-bg-alt: #F2EEE7;
+    --color-text: #1B1F2A;
+    --color-text-soft: #55596B;
+    --color-sunset: #FF6B35;
+    --color-sunset-dark: #E4552A;
+    --color-ocean: #00A896;
+    --color-ocean-dark: #007A6E;
+    --color-border: #E3DED3;
+    --color-card-bg: #FFFFFF;
+
+    /* Typographie */
+    --font-display: 'Bricolage Grotesque', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Espacements */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 4rem;
+    --space-xl: 6rem;
+
+    /* Rayons et ombres */
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-full: 999px;
+    --shadow-soft: 0 4px 20px rgba(13, 19, 33, 0.08);
+    --shadow-hover: 0 12px 32px rgba(13, 19, 33, 0.14);
+
+    /* Transitions */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.35s ease;
+
+    /* Largeur de contenu */
+    --content-width: 1200px;
+}
+
+/* ===== VARIABLES - MODE SOMBRE - commit 4 ===== */
+[data-theme="dark"] {
+    --color-bg: #0D1321;
+    --color-bg-alt: #161D30;
+    --color-text: #F5F3EF;
+    --color-text-soft: #A7ACC2;
+    --color-sunset: #FF7A47;
+    --color-sunset-dark: #FF6B35;
+    --color-ocean: #12C7B4;
+    --color-ocean-dark: #00A896;
+    --color-border: #2A3350;
+    --color-card-bg: #161D30;
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.35);
+    --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.5);
+}
+
+/*  RESET DE BASE  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.6;
+    transition: background-color var(--transition-base), color var(--transition-base);
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--color-text);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); margin-bottom: var(--space-md); }
+h3 { font-size: 1.25rem; }
+
+p { color: var(--color-text-soft); }
+
+.sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+*:focus-visible {
+    outline: 3px solid var(--color-ocean);
+    outline-offset: 2px;
+}
+
+/* Conteneur générique pour toutes les sections de <main> */
+main > section {
+    max-width: var(--content-width);
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-md);
+}
+
+/* Boutons génériques (utilisés dans le hero dès ce commit) */
+.btn-primary,
+.btn-secondary {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.btn-primary {
+    background-color: var(--color-sunset);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: var(--color-sunset-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 2px solid var(--color-border);
+}
+.btn-secondary:hover {
+    border-color: var(--color-ocean);
+    color: var(--color-ocean);
+    transform: translateY(-2px);
+}
+
